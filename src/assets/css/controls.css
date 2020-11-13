@@ -1,0 +1,74 @@
+input,
+textarea,
+select {
+  @apply block;
+  margin-bottom: 1rem !important;
+  padding: 0.8rem !important;
+  @apply font-headline;
+  @apply italic;
+  @apply font-bold;
+  @apply w-full;
+}
+
+input[type="file"] {
+  padding: 0 !important;
+  @apply text-white;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.label__radio {
+  @apply cursor-pointer;
+}
+
+label {
+  @apply italic;
+  @apply font-bold;
+  @apply text-white;
+  @apply uppercase;
+  @apply font-headline;
+}
+
+.btn {
+  @apply bg-turquoise;
+  @apply uppercase;
+  @apply text-darkGray;
+  @apply font-headline;
+  @apply py-1;
+  @apply px-2;
+  @apply italic;
+  @apply rounded-md;
+  @apply transition-all;
+  @apply ease-in-out;
+  @apply duration-200;
+}
+
+.btn-download {
+  @apply w-full;
+}
+
+.btn:hover {
+  @apply bg-turquoise-lighter;
+}
+
+h2.controls {
+  @apply text-white;
+  @apply uppercase;
+  @apply font-headline;
+  @apply italic;
+  @apply text-md;
+}
+
+.colorThumbnail {
+  @apply border-8;
+  @apply transition-all;
+  @apply ease-in-out;
+  @apply duration-200;
+  border-color: transparent;
+}
+
+.colorThumbnail:hover {
+  @apply opacity-75;
+}
