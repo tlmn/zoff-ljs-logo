@@ -123,3 +123,41 @@ export const templates = [
     thumbnailSrc: "../assets/images/templates/politische-bildung.jpg",
   },
 ];
+
+const templateSize = 400;
+
+export const textStyles = [
+  [
+    {
+      marginTop: `${templateSize * 0.6625}px`,
+      transform: "rotate(0deg)",
+      marginLeft: `${templateSize * 0.6625}px`,
+      width: `${templateSize * (1 - 0.6625)}px`,
+    },
+    {
+      marginTop: `${templateSize * 0.75}px`,
+      transform: "rotate(-6deg)",
+    },
+    { transform: "rotate(-7deg)" },
+  ],
+  [
+    { marginTop: "200px", transform: "rotate(4deg)", marginLeft: "430px" },
+    { marginTop: "200px", transform: "rotate(-2deg)", marginLeft: "430px" },
+    { transform: "rotate(-2deg)" },
+  ],
+  [
+    { marginTop: "200px", transform: "rotate(5deg)", marginLeft: "430px" },
+    { marginTop: "200px", transform: "rotate(-6deg)", marginLeft: "430px" },
+    { transform: "rotate(5.66deg)" },
+  ],
+  [
+    { marginTop: "200px", transform: "rotate(0)", marginLeft: "430px" },
+    { marginTop: "200px", transform: "rotate(-4deg)", marginLeft: "430px" },
+    { transform: "rotate(-13.01deg)" },
+  ],
+  [
+    { marginTop: "200px", transform: "rotate(0)", marginLeft: "430px" },
+    { marginTop: "200px", transform: "rotate(-1deg)", marginLeft: "430px" },
+    { transform: "rotate(0)" },
+  ],
+];

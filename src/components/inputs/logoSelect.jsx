@@ -26,7 +26,7 @@ export default ({ state, setState }) => {
               {renderLogoTextRight(
                 i,
                 90,
-                `${state.data.logoVariant === i ? getColor(state, 0) : `#fff`}`
+                `${state.data.logoVariant === i ? `#00FFC2` : `#fff`}`
               )}
             </div>
           </label>

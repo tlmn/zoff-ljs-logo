@@ -1,4 +1,4 @@
-import { colorThemes, colors } from "../config/vars";
+import { colorThemes, colors, textStyles } from "../config/vars";
 
 import LogoTextBottom0 from "../assets/svg/logos/textBottom/0";
 import LogoTextBottom1 from "../assets/svg/logos/textBottom/1";
@@ -70,7 +70,6 @@ export const renderLogoTextRight = (index, height, fillColor = "#252525") => {
   }
 };
 
-
 export const renderLogoTextBottom = (index, height, fillColor = "#252525") => {
   switch (index) {
     case 0:
@@ -86,4 +85,8 @@ export const renderLogoTextBottom = (index, height, fillColor = "#252525") => {
     default:
       return <LogoTextBottom0 height={height} fillColor={fillColor} />;
   }
+};
+
+export const getTextStyles = (state, logoOrder = 0) => {
+  return textStyles[state.data.logoVariant][logoOrder];
 };

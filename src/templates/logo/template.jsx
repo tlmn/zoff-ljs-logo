@@ -1,6 +1,7 @@
 import {
   formatEmojis,
   getColor,
+  getTextStyles,
   renderLogoTextBottom,
   renderLogoTextRight,
 } from "../../lib/lib";
@@ -23,12 +24,10 @@ export default ({ state }) => {
         >
           {renderLogoTextRight(state.data.logoVariant, 200, getColor(state, 0))}
           <span
-            className="absolute top-0 left-0 text-md font-headline italic uppercase leading-none"
+            className="absolute top-0 left-0 text-md font-headline italic uppercase leading-none break-all"
             style={{
               color: getColor(state, 0),
-              transform: "rotate(4deg)",
-              marginLeft: "263px",
-              marginTop: "266px",
+              ...getTextStyles(state, 0),
             }}
             dangerouslySetInnerHTML={{
               __html: state.data.localBranch.content.replace(/\n/gi, "<br/>"),
@@ -55,8 +54,7 @@ export default ({ state }) => {
             className="absolute text-center top-0 text-md font-headline italic uppercase leading-none"
             style={{
               color: getColor(state, 0),
-              marginTop: "300px",
-              transform: "rotate(-7deg)",
+              ...getTextStyles(state, 1),
             }}
             dangerouslySetInnerHTML={{
               __html: state.data.localBranch.content.replace(/\n/gi, "<br/>"),
@@ -79,8 +77,7 @@ export default ({ state }) => {
             className="absolute top-0 text-center  text-md font-headline italic uppercase leading-none"
             style={{
               color: getColor(state, 0),
-              marginTop: "300px",
-              transform: "rotate(-7deg)",
+              ...getTextStyles(state, 2),
             }}
             dangerouslySetInnerHTML={{
               __html: state.data.localBranch.content.replace(/\n/gi, "<br/>"),
