@@ -27,8 +27,6 @@ export const secondaryThemes = [
   "white_red",
 ];
 
-export const textPositions = %
-
 export const colorThemes = [
   {
     label: "darkGray_white",
