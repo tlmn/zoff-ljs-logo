@@ -1,10 +1,15 @@
 import { colorThemes, colors } from "../config/vars";
 
-import Logo0 from "../assets/svg/logos/0";
-import Logo1 from "../assets/svg/logos/1";
-import Logo2 from "../assets/svg/logos/2";
-import Logo3 from "../assets/svg/logos/3";
-import Logo4 from "../assets/svg/logos/4";
+import LogoTextBottom0 from "../assets/svg/logos/textBottom/0";
+import LogoTextBottom1 from "../assets/svg/logos/textBottom/1";
+import LogoTextBottom2 from "../assets/svg/logos/textBottom/2";
+import LogoTextBottom3 from "../assets/svg/logos/textBottom/3";
+import LogoTextBottom4 from "../assets/svg/logos/textBottom/4";
+import LogoTextRight0 from "../assets/svg/logos/textRight/0";
+import LogoTextRight1 from "../assets/svg/logos/textRight/1";
+import LogoTextRight2 from "../assets/svg/logos/textRight/2";
+import LogoTextRight3 from "../assets/svg/logos/textRight/3";
+import LogoTextRight4 from "../assets/svg/logos/textRight/4";
 import React from "react";
 import emojiRegex from "emoji-regex";
 import htmlToImage from "html-to-image";
@@ -48,19 +53,37 @@ export const getPrimaryColor = (currentState) => {
     .value;
 };
 
-export const renderLogo = (index, height, fillColor = "#252525") => {
+export const renderLogoTextRight = (index, height, fillColor = "#252525") => {
   switch (index) {
     case 0:
-      return <Logo0 height={height} fillColor={fillColor} />;
+      return <LogoTextRight0 height={height} fillColor={fillColor} />;
     case 1:
-      return <Logo1 height={height} fillColor={fillColor} />;
+      return <LogoTextRight1 height={height} fillColor={fillColor} />;
     case 2:
-      return <Logo2 height={height} fillColor={fillColor} />;
+      return <LogoTextRight2 height={height} fillColor={fillColor} />;
     case 3:
-      return <Logo3 height={height} fillColor={fillColor} />;
+      return <LogoTextRight3 height={height} fillColor={fillColor} />;
     case 4:
-      return <Logo4 height={height} fillColor={fillColor} />;
+      return <LogoTextRight4 height={height} fillColor={fillColor} />;
     default:
-      return <Logo0 height={height} fillColor={fillColor} />;
+      return <LogoTextRight0 height={height} fillColor={fillColor} />;
+  }
+};
+
+
+export const renderLogoTextBottom = (index, height, fillColor = "#252525") => {
+  switch (index) {
+    case 0:
+      return <LogoTextBottom0 height={height} fillColor={fillColor} />;
+    case 1:
+      return <LogoTextBottom1 height={height} fillColor={fillColor} />;
+    case 2:
+      return <LogoTextBottom2 height={height} fillColor={fillColor} />;
+    case 3:
+      return <LogoTextBottom3 height={height} fillColor={fillColor} />;
+    case 4:
+      return <LogoTextBottom4 height={height} fillColor={fillColor} />;
+    default:
+      return <LogoTextBottom0 height={height} fillColor={fillColor} />;
   }
 };

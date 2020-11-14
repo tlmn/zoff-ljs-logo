@@ -1,4 +1,9 @@
-import { formatEmojis, getColor, renderLogo } from "../../lib/lib";
+import {
+  formatEmojis,
+  getColor,
+  renderLogoTextBottom,
+  renderLogoTextRight,
+} from "../../lib/lib";
 
 import LogoArrow from "../../assets/svg/logo-arrow";
 import React from "react";
@@ -16,14 +21,14 @@ export default ({ state }) => {
           }}
           ref={state.refs[1]}
         >
-          {renderLogo(state.data.logoVariant, 200, getColor(state, 0))}
+          {renderLogoTextRight(state.data.logoVariant, 200, getColor(state, 0))}
           <span
             className="absolute top-0 left-0 text-md font-headline italic uppercase leading-none"
             style={{
               color: getColor(state, 0),
               transform: "rotate(4deg)",
-              marginLeft: "66%",
-              marginTop: "67%",
+              marginLeft: "263px",
+              marginTop: "266px",
             }}
             dangerouslySetInnerHTML={{
               __html: state.data.localBranch.content.replace(/\n/gi, "<br/>"),
@@ -41,10 +46,18 @@ export default ({ state }) => {
           }}
           ref={state.refs[1]}
         >
-          {renderLogo(state.data.logoVariant, 200, getColor(state, 0))}
+          {renderLogoTextBottom(
+            state.data.logoVariant,
+            200,
+            getColor(state, 0)
+          )}
           <span
             className="absolute text-center top-0 text-md font-headline italic uppercase leading-none"
-            style={{ color: getColor(state, 0), marginTop: "79%" }}
+            style={{
+              color: getColor(state, 0),
+              marginTop: "300px",
+              transform: "rotate(-7deg)",
+            }}
             dangerouslySetInnerHTML={{
               __html: state.data.localBranch.content.replace(/\n/gi, "<br/>"),
             }}
@@ -64,7 +77,11 @@ export default ({ state }) => {
           <LogoArrow fillColor={getColor(state, 0)} />
           <span
             className="absolute top-0 text-center  text-md font-headline italic uppercase leading-none"
-            style={{ color: getColor(state, 0), marginTop: "70%" }}
+            style={{
+              color: getColor(state, 0),
+              marginTop: "300px",
+              transform: "rotate(-7deg)",
+            }}
             dangerouslySetInnerHTML={{
               __html: state.data.localBranch.content.replace(/\n/gi, "<br/>"),
             }}
