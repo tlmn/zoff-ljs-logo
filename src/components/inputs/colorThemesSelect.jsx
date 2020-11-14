@@ -21,7 +21,12 @@ export default ({ state, setState }) => (
             id={
               colorThemes.filter((theme) => theme.label === colorTheme)[0].name
             }
-            onChange={(e) => setState({ ...state, colorTheme: e.target.value })}
+            onChange={(e) =>
+              setState({
+                ...state,
+                data: { ...state.data, colorTheme: e.target.value },
+              })
+            }
           />
           <label
             htmlFor={
@@ -59,7 +64,12 @@ export default ({ state, setState }) => (
             id={
               colorThemes.filter((theme) => theme.label === colorTheme)[0].name
             }
-            onChange={(e) => setState({ ...state, colorTheme: e.target.value })}
+            onChange={(e) =>
+              setState({
+                ...state,
+                data: { ...state.data, colorTheme: e.target.value },
+              })
+            }
           />
           <label
             htmlFor={

@@ -9,7 +9,7 @@ export default ({ state, setState }) => {
       <label>Logovariante</label>
       <LogoSelect state={state} setState={setState} />
       <label htmlFor="localBranch">Lokalgruppe</label>
-      <input
+      <textarea
         id="localBranch"
         onChange={(e) =>
           setState({
@@ -20,8 +20,10 @@ export default ({ state, setState }) => {
             },
           })
         }
-        value={state.data.localBranch.content}
-      />
+        rows={2}
+      >
+        {state.data.localBranch.content}
+      </textarea>
       <div className="flex" style={{ gap: "10px" }}>
         <button
           className="btn btn-download flex justify-center"

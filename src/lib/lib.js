@@ -38,7 +38,7 @@ export const getColor = (currentState, order) => {
     (color) =>
       color.name ===
       colorThemes.filter(
-        (colorTheme) => colorTheme.label === currentState.colorTheme
+        (colorTheme) => colorTheme.label === currentState.data.colorTheme
       )[0].colors[order]
   )[0].value;
 };
@@ -48,19 +48,19 @@ export const getPrimaryColor = (currentState) => {
     .value;
 };
 
-export const renderLogo = (index, height) => {
+export const renderLogo = (index, height, fillColor = "#252525") => {
   switch (index) {
     case 0:
-      return <Logo0 height={height} />;
+      return <Logo0 height={height} fillColor={fillColor} />;
     case 1:
-      return <Logo1 height={height} />;
+      return <Logo1 height={height} fillColor={fillColor} />;
     case 2:
-      return <Logo2 height={height} />;
+      return <Logo2 height={height} fillColor={fillColor} />;
     case 3:
-      return <Logo3 height={height} />;
+      return <Logo3 height={height} fillColor={fillColor} />;
     case 4:
-      return <Logo4 height={height} />;
+      return <Logo4 height={height} fillColor={fillColor} />;
     default:
-      return <Logo0 height={height} />;
+      return <Logo0 height={height} fillColor={fillColor} />;
   }
 };

@@ -13,6 +13,7 @@ export const textPositions = [
 ];
 
 export const corporateThemes = [
+  "darkGray_white",
   "darkGray_turquoise",
   "turquoise_darkGray",
   "violet_red",
@@ -26,7 +27,14 @@ export const secondaryThemes = [
   "white_red",
 ];
 
+export const textPositions = %
+
 export const colorThemes = [
+  {
+    label: "darkGray_white",
+    name: "dunkelgrau & weiß",
+    colors: ["darkGray", "white"],
+  },
   {
     label: "darkGray_turquoise",
     name: "dunkelgrau & türkis",
