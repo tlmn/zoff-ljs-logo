@@ -22,8 +22,8 @@ export default ({ state }) => {
             style={{
               color: getColor(state, 0),
               transform: "rotate(4deg)",
-              marginLeft: "62%",
-              marginTop: "68%",
+              marginLeft: "66%",
+              marginTop: "67%",
             }}
             dangerouslySetInnerHTML={{
               __html: state.data.localBranch.content.replace(/\n/gi, "<br/>"),
