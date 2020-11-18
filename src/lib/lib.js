@@ -1,3 +1,4 @@
+import { cloneDeepWith, get, set } from "lodash";
 import { colorThemes, colors, textStyles } from "../config/vars";
 
 import LogoTextBottom0 from "../assets/svg/logos/textBottom/0";
@@ -89,4 +90,14 @@ export const renderLogoTextBottom = (index, height, fillColor = "#252525") => {
 
 export const getTextStyles = (state, logoOrder = 0) => {
   return textStyles[state.data.logoVariant][logoOrder];
+};
+
+export const updateProperty = ({ state, setState }, path, newValue) => {
+  let prevState = cloneDeepWith(state);
+  set(prevState, path, newValue);
+  setState(prevState);
+};
+
+export const getProperty = ({ state }, path) => {
+  return get(state, path);
 };
