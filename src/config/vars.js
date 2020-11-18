@@ -129,35 +129,79 @@ const templateSize = 400;
 export const textStyles = [
   [
     {
-      marginTop: `${templateSize * 0.6625}px`,
+      marginTop: `${templateSize * 0.6325}px`,
       transform: "rotate(0deg)",
-      marginLeft: `${templateSize * 0.6625}px`,
-      width: `${templateSize * (1 - 0.6625)}px`,
+      marginLeft: `${templateSize * 0.6325}px`,
+      width: `${templateSize * (1 - 0.6325)}px`,
     },
     {
-      marginTop: `${templateSize * 0.75}px`,
+      marginTop: `${templateSize * 0.73}px`,
       transform: "rotate(-6deg)",
     },
-    { transform: "rotate(-7deg)" },
+    {
+      transform: "rotate(-7deg)",
+      marginTop: `${templateSize * 0.7}px`,
+    },
   ],
   [
-    { marginTop: "200px", transform: "rotate(4deg)", marginLeft: "430px" },
-    { marginTop: "200px", transform: "rotate(-2deg)", marginLeft: "430px" },
-    { transform: "rotate(-2deg)" },
+    {
+      marginTop: `${templateSize * 0.675}px`,
+      transform: "rotate(4deg)",
+      marginLeft: `${templateSize * 0.59}px`,
+      width: `${templateSize * (1 - 0.59)}px`,
+    },
+    {
+      marginTop: `${templateSize * 0.74}px`,
+      transform: "rotate(-2deg)",
+    },
+    {
+      transform: "rotate(-2deg)",
+      marginTop: `${templateSize * 0.7}px`,
+    },
   ],
   [
-    { marginTop: "200px", transform: "rotate(5deg)", marginLeft: "430px" },
-    { marginTop: "200px", transform: "rotate(-6deg)", marginLeft: "430px" },
-    { transform: "rotate(5.66deg)" },
+    {
+      marginTop: `${templateSize * 0.68}px`,
+      transform: "rotate(5deg)",
+      marginLeft: `${templateSize * 0.605}px`,
+      width: `${templateSize * (1 - 0.605)}px`,
+    },
+    {
+      marginTop: `${templateSize * 0.72}px`,
+      transform: "rotate(-6deg)",
+    },
+    { transform: "rotate(5.66deg)", marginTop: `${templateSize * 0.7}px` },
   ],
   [
-    { marginTop: "200px", transform: "rotate(0)", marginLeft: "430px" },
-    { marginTop: "200px", transform: "rotate(-4deg)", marginLeft: "430px" },
-    { transform: "rotate(-13.01deg)" },
+    {
+      marginTop: `${templateSize * 0.6525}px`,
+      transform: "rotate(0deg)",
+      marginLeft: `${templateSize * 0.6075}px`,
+      width: `${templateSize * (1 - 0.6075)}px`,
+    },
+    {
+      marginTop: `${templateSize * 0.73}px`,
+      transform: "rotate(-4deg)",
+    },
+    {
+      transform: "rotate(-13.01deg)",
+      marginTop: `${templateSize * 0.7}px`,
+    },
   ],
   [
-    { marginTop: "200px", transform: "rotate(0)", marginLeft: "430px" },
-    { marginTop: "200px", transform: "rotate(-1deg)", marginLeft: "430px" },
-    { transform: "rotate(0)" },
+    {
+      marginTop: `${templateSize * 0.6525}px`,
+      transform: "rotate(0deg)",
+      marginLeft: `${templateSize * 0.69}px`,
+      width: `${templateSize * (1 - 0.69)}px`,
+    },
+    {
+      marginTop: `${templateSize * 0.74}px`,
+      transform: "rotate(-1deg)",
+    },
+    {
+      transform: "rotate(0)",
+      marginTop: `${templateSize * 0.7}px`,
+    },
   ],
 ];
