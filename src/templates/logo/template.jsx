@@ -1,5 +1,4 @@
 import {
-  formatEmojis,
   getColor,
   getTextStyles,
   renderLogoTextBottom,
@@ -22,7 +21,7 @@ export default ({ state }) => {
           }}
           ref={state.refs[1]}
         >
-          {renderLogoTextRight(state.data.logoVariant, 200, getColor(state, 0))}
+          {renderLogoTextRight(state.data.logoVariant, 175, getColor(state, 0))}
           <span
             className="absolute top-0 left-0 text-md font-headline italic uppercase leading-none break-all"
             style={{
@@ -47,7 +46,7 @@ export default ({ state }) => {
         >
           {renderLogoTextBottom(
             state.data.logoVariant,
-            200,
+            175,
             getColor(state, 0)
           )}
           <span
@@ -72,7 +71,7 @@ export default ({ state }) => {
           }}
           ref={state.refs[1]}
         >
-          <LogoArrow fillColor={getColor(state, 0)} />
+          <LogoArrow fillColor={getColor(state, 0)} width={100} />
           <span
             className="absolute top-0 text-center  text-md font-headline italic uppercase leading-none"
             style={{
@@ -95,7 +94,7 @@ export default ({ state }) => {
           }}
           ref={state.refs[1]}
         >
-          <LogoArrow fillColor={getColor(state, 0)} />
+          <LogoArrow fillColor={getColor(state, 0)} width={100}  />
         </div>
       </div>
     </div>
