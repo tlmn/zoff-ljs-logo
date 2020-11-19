@@ -13,7 +13,7 @@ export default () => {
       localBranch: { content: "" },
       colorTheme: "turquoise_darkGray",
       scales: [
-        { value: 80, range: [67, 120] },
+        { value: 80, range: [45, 120] },
         { value: 80, range: [67, 120] },
         { value: 80, range: [67, 120] },
       ],

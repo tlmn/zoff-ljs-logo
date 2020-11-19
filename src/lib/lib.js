@@ -22,27 +22,28 @@ export const html2image = async (
   fileType
 ) => {
   if (fileType === "svg") {
-    setState({ ...state, templateScale: false }, () => {
-      console.log("hallo");
+    setState({ ...state, templateScale: false });
+
+    state.refs.map((ref, index) => {
+      htmlToImage
+        .toSvgDataURL(ref.current, {
+          quality: 1,
+          width: 1080,
+          height: 1080,
+        })
+        .then(function (dataUrl) {
+          var link = document.createElement("a");
+          link.download = `logo-${index}.svg`;
+          link.href = dataUrl;
+          link.click();
+        });
     });
+
     setTimeout(() => {
-      state.refs.map((ref, index) => {
-        htmlToImage
-          .toSvgDataURL(ref.current, {
-            quality: 1,
-            width: 1080,
-            height: 1080,
-          })
-          .then(function (dataUrl) {
-            var link = document.createElement("a");
-            link.download = `logo-${index}.svg`;
-            link.href = dataUrl;
-            link.click();
-          });
-      });
+      setState({ ...state, templateScale: true });
     }, 2000);
 
-    // setState({ ...state, templateScale: true });
+    //
   } else {
     await setState({ ...state, templateScale: false });
 

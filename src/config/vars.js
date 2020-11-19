@@ -6,18 +6,12 @@ export const colors = [
   { name: "white", value: "#fff" },
 ];
 
-export const textPositions = [
-  { label: "oben", value: "start" },
-  { label: "mitte", value: "center" },
-  { label: "unten", value: "end" },
-];
-
 export const corporateThemes = [
-  "darkGray_white",
   "darkGray_turquoise",
   "turquoise_darkGray",
   "violet_red",
   "red_violet",
+  "darkGray_white",
 ];
 
 export const secondaryThemes = [

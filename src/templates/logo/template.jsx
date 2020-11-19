@@ -7,11 +7,17 @@ import {
 
 import LogoArrow from "../../assets/svg/logo-arrow";
 import React from "react";
+import TextScale from "../../components/inputs/textScale";
 
-export default ({ state }) => {
+export default ({ state, setState }) => {
   return (
-    <div className="col-span-6 relative grid-cols-2 grid">
-      <div className="col-span-1" style={{ height: "220px" }}>
+    <div className="col-span-6 relative grid-cols-2 grid gap-x-2">
+      <div className="col-span-1" style={{ height: "300px" }}>
+        <TextScale
+          state={state}
+          setState={setState}
+          propertyPath="data.scales[0]"
+        />
         <div
           className={`p-4 relative // flex flex-col items-center justify-center  // border-1 // template ${
             state.templateScale ? `template-scale` : `relative`
@@ -35,10 +41,15 @@ export default ({ state }) => {
           />
         </div>
       </div>
-      <div className="col-span-1" style={{ height: "220px" }}>
+      <div className="col-span-1" style={{ height: "300px" }}>
+        <TextScale
+          state={state}
+          setState={setState}
+          propertyPath="data.scales[1]"
+        />
         <div
           className={`p-4 relative // flex flex-col items-center justify-center  // border-1 // template ${
-            state.templateScale ? `template-scale` : `relative`
+            state.templateScale ? `template-scale m-auto` : `relative`
           }`}
           style={{
             backgroundColor: getColor(state, 1),
@@ -64,6 +75,11 @@ export default ({ state }) => {
         </div>
       </div>
       <div className="col-span-1">
+        <TextScale
+          state={state}
+          setState={setState}
+          propertyPath="data.scales[2]"
+        />
         <div
           className={`p-4 relative // flex flex-col items-center justify-center // border-1 // template ${
             state.templateScale ? `template-scale` : `relative`

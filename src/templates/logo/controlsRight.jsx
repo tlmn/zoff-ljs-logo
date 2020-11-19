@@ -22,12 +22,6 @@ export default ({ state, setState }) => {
         rows={2}
       />
 
-      <TextScale state={state} setState={setState} propertyPath="data.scales[0]" label="Größe 1" />
-
-      <TextScale state={state} setState={setState} propertyPath="data.scales[1]" label="Größe 2" />
-      
-      <TextScale state={state} setState={setState} propertyPath="data.scales[2]" label="Größe 3" />
-
       <div className="flex" style={{ gap: "10px" }}>
         <button
           className="btn btn-download flex justify-center"

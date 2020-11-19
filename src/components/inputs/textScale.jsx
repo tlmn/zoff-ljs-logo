@@ -9,6 +9,7 @@ export default ({ state, setState, propertyPath, label = "Textgröße" }) => (
       type="range"
       id={propertyPath}
       name="bodyTextScale"
+      className="w-3/4"
       min={getProperty({state, setState}, `${propertyPath}.range[0]`)}
       max={getProperty({state, setState}, `${propertyPath}.range[1]`)}
       value={getProperty({state, setState}, `${propertyPath}.value`)}
