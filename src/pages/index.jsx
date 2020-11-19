@@ -12,6 +12,11 @@ export default () => {
       logoVariant: 0,
       localBranch: { content: "" },
       colorTheme: "turquoise_darkGray",
+      scales: [
+        { value: 80, range: [67, 120] },
+        { value: 80, range: [67, 120] },
+        { value: 80, range: [67, 120] },
+      ],
     },
     refs: [useRef(null), useRef(null), useRef(null), useRef(null)],
     templateScale: true,

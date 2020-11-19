@@ -16,22 +16,52 @@ import emojiRegex from "emoji-regex";
 import htmlToImage from "html-to-image";
 import slugify from "react-slugify";
 
-export const html2image = async ({ state, setState }, fileName = "solid") => {
-  setState({ ...state, templateScale: false });
-  htmlToImage
-    .toJpeg(state.slides[state.currentSlide].ref.current, {
-      quality: 1,
-      width: 1080,
-      height: 1080,
-    })
-    .then(function (dataUrl) {
-      var link = document.createElement("a");
-      link.download = `sharepic-${slugify(fileName.substring(0, 20))}.jpg`;
-      link.href = dataUrl;
-      link.click();
-      setState({ ...state, templateScale: true });
+export const html2image = async (
+  { state, setState },
+  fileName = "solid",
+  fileType
+) => {
+  if (fileType === "svg") {
+    await setState({ ...state, templateScale: false });
+
+    state.refs.map((ref, index) => {
+      htmlToImage
+        .toSvgDataURL(ref.current, {
+          quality: 1,
+          width: 1080,
+          height: 1080,
+        })
+        .then(function (dataUrl) {
+          var link = document.createElement("a");
+          link.download = `logo-${index}.svg`;
+          link.href = dataUrl;
+          link.click();
+        });
     });
+
+    setState({ ...state, templateScale: true });
+  } else {
+    await setState({ ...state, templateScale: false });
+    
+    state.refs.map((ref, index) => {
+      htmlToImage
+        .toPng(ref.current, {
+          quality: 1,
+          width: 1080,
+          height: 1080,
+        })
+        .then(function (dataUrl) {
+          var link = document.createElement("a");
+          link.download = `logo-${index}.png`;
+          link.href = dataUrl;
+          link.click();
+        });
+    });
+
+    setState({ ...state, templateScale: true });
+  }
 };
+
 export const formatEmojis = (text = "") => {
   return text.replace(
     emojiRegex(),

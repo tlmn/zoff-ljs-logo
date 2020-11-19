@@ -124,7 +124,7 @@ export const templates = [
   },
 ];
 
-const templateSize = 400;
+const templateSize = 1080;
 
 export const textStyles = [
   [

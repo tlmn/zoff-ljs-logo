@@ -4,7 +4,7 @@ import React from "react";
 
 export default ({ state, setState, propertyPath, label = "Textgröße" }) => (
   <>
-    <label htmlFor={propertyPath}>Textgröße</label>
+    <label htmlFor={propertyPath}>{label}</label>
     <input
       type="range"
       id={propertyPath}
