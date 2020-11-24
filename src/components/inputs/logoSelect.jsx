@@ -1,6 +1,5 @@
-import { getColor, renderLogoTextRight } from "../../lib/lib";
-
 import React from "react";
+import { renderLogoTextRight } from "../../lib/lib";
 
 export default ({ state, setState }) => {
   const logos = [0, 1, 2, 3, 4];
