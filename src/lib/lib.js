@@ -22,32 +22,37 @@ export const html2image = async (
   propertyPath,
   fileType
 ) => {
-  setState({ ...state, templateScale: false });
-  
   if (fileType === "svg") {
-    htmlToImage
-      .toSvgDataURL(getProperty({ state }, propertyPath).current, {
-        quality: 1,
-        width: 1080,
-        height: 1080,
-      })
-      .then(function (blob) {
-        saveAs(blob, `logo-1.svg`);
-      });
+    setState({ ...state, templateScale: false });
 
-    setState({ ...state, templateScale: true });
+    setTimeout(() => {
+      htmlToImage
+        .toSvgDataURL(getProperty({ state }, propertyPath).current, {
+          quality: 1,
+          width: 1080,
+          height: 1080,
+        })
+        .then(function (blob) {
+          saveAs(blob, `logo-1.svg`);
+        });
+    }, 500);
+    setTimeout(() => setState({ ...state, templateScale: true }), 1500);
   } else {
-    htmlToImage
-      .toPng(getProperty({ state }, propertyPath).current, {
-        quality: 1,
-        width: 1080,
-        height: 1080,
-      })
-      .then(function (blob) {
-        saveAs(blob, `logo-.png`);
-      });
+    setState({ ...state, templateScale: false });
 
-    setState({ ...state, templateScale: true });
+    setTimeout(() => {
+      htmlToImage
+        .toPng(getProperty({ state }, propertyPath).current, {
+          quality: 1,
+          width: 1080,
+          height: 1080,
+        })
+        .then(function (blob) {
+          saveAs(blob, `logo-.png`);
+        });
+    }, 500);
+
+    setTimeout(() => setState({ ...state, templateScale: true }), 1500);
   }
 };
 
