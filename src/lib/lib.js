@@ -13,9 +13,8 @@ import LogoTextRight3 from "../assets/svg/logos/textRight/3";
 import LogoTextRight4 from "../assets/svg/logos/textRight/4";
 import React from "react";
 import emojiRegex from "emoji-regex";
-import htmlToImage from "html-to-image";
+import { toPng, toSvg } from "html-to-image";
 import { saveAs } from "file-saver";
-import { slugify } from "react-slugify";
 
 export const html2image = async (
   { state, setState, fileName = "none" },
@@ -23,10 +22,10 @@ export const html2image = async (
   fileType
 ) => {
   if (fileType === "svg") {
-    setState({ ...state, templateScale: false });
+    setState((prev) => ({ ...prev, templateScale: false }));
 
     setTimeout(() => {
-      htmlToImage
+      toSvg
         .toSvgDataURL(getProperty({ state }, propertyPath).current, {
           quality: 1,
           width: 1080,
@@ -36,23 +35,27 @@ export const html2image = async (
           saveAs(blob, `logo-1.svg`);
         });
     }, 500);
-    setTimeout(() => setState({ ...state, templateScale: true }), 1500);
+    setTimeout(
+      () => setState((prev) => ({ ...prev, templateScale: true })),
+      1500
+    );
   } else {
-    setState({ ...state, templateScale: false });
+    setState((prev) => ({ ...prev, templateScale: false }));
 
     setTimeout(() => {
-      htmlToImage
-        .toPng(getProperty({ state }, propertyPath).current, {
-          quality: 1,
-          width: 1080,
-          height: 1080,
-        })
-        .then(function (blob) {
-          saveAs(blob, `logo-.png`);
-        });
+      toPng(getProperty({ state }, propertyPath).current, {
+        quality: 1,
+        width: 1080,
+        height: 1080,
+      }).then(function (blob) {
+        saveAs(blob, `logo-.png`);
+      });
     }, 500);
 
-    setTimeout(() => setState({ ...state, templateScale: true }), 1500);
+    setTimeout(
+      () => setState((prev) => ({ ...prev, templateScale: true })),
+      1500
+    );
   }
 };
 
@@ -116,10 +119,12 @@ export const getTextStyles = (state, logoOrder = 0) => {
   return textStyles[state.data.logoVariant][logoOrder];
 };
 
-export const updateProperty = ({ state, setState }, path, newValue) => {
-  let prevState = cloneDeepWith(state);
-  set(prevState, path, newValue);
-  setState(prevState);
+export const updateProperty = ({ setState }, path, newValue) => {
+  setState((prev) => {
+    let prevCloned = cloneDeepWith(prev);
+    set(prevCloned, path, newValue);
+    return prevCloned;
+  });
 };
 
 export const getProperty = ({ state }, path) => {
