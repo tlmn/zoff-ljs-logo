@@ -25,15 +25,13 @@ export const html2image = async (
     setState((prev) => ({ ...prev, templateScale: false }));
 
     setTimeout(() => {
-      toSvg
-        .toSvgDataURL(getProperty({ state }, propertyPath).current, {
-          quality: 1,
-          width: 1080,
-          height: 1080,
-        })
-        .then(function (blob) {
-          saveAs(blob, `logo-1.svg`);
-        });
+      toSvg(getProperty({ state }, propertyPath).current, {
+        quality: 1,
+        width: 1080,
+        height: 1080,
+      }).then(function (blob) {
+        saveAs(blob, `logo-1.svg`);
+      });
     }, 500);
     setTimeout(
       () => setState((prev) => ({ ...prev, templateScale: true })),
