@@ -1,7 +1,9 @@
 import React from "react";
 import { renderLogoTextRight } from "../../lib/lib";
+import useDataContext from "../../lib/useDataContext";
 
-export default ({ state, setState }) => {
+const LogoSelect = () => {
+  const { state, setState } = useDataContext();
   const logos = [0, 1, 2, 3, 4];
 
   return (
@@ -13,12 +15,13 @@ export default ({ state, setState }) => {
             value={i}
             name="colorTheme"
             id={i}
-            onChange={(e) =>
-              setState({
-                ...state,
-                data: { ...state.data, logoVariant: parseInt(e.target.value) },
-              })
-            }
+            onChange={(e) => {
+              let value = e.target.value;
+              setState((prev) => ({
+                ...prev,
+                data: { ...prev.data, logoVariant: parseInt(value) },
+              }));
+            }}
           />
           <label htmlFor={i} className="label__radio">
             <div className="mx-2 my-1 hover:opacity-75 ease-in-out transition-all duration-200">
@@ -34,3 +37,5 @@ export default ({ state, setState }) => {
     </div>
   );
 };
+
+export default LogoSelect;

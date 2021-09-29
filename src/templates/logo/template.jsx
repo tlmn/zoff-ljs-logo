@@ -9,21 +9,15 @@ import DownloadButtons from "../../components/inputs/downloadButtons";
 import LogoArrow from "../../assets/svg/logo-arrow";
 import React from "react";
 import TextScale from "../../components/inputs/textScale";
+import useDataContext from "../../lib/useDataContext";
 
-export default ({ state, setState }) => {
+const Template = () => {
+  const { state } = useDataContext();
   return (
     <div className="col-span-6 relative grid-cols-2 grid gap-x-2">
       <div className="col-span-1" style={{ height: "360px" }}>
-        <TextScale
-          state={state}
-          setState={setState}
-          propertyPath="data.scales[0]"
-        />
-        <DownloadButtons
-          state={state}
-          setState={setState}
-          propertyPath="refs[0]"
-        />
+        <TextScale propertyPath="data.scales[0]" />
+        <DownloadButtons propertyPath="refs[0]" />
         <div
           className={`p-4 relative // flex flex-col items-center justify-center  // border-1 // template ${
             state.templateScale ? `template-scale` : `relative`
@@ -48,16 +42,8 @@ export default ({ state, setState }) => {
         </div>
       </div>
       <div className="col-span-1" style={{ height: "360px" }}>
-        <TextScale
-          state={state}
-          setState={setState}
-          propertyPath="data.scales[1]"
-        />
-        <DownloadButtons
-          state={state}
-          setState={setState}
-          propertyPath="refs[1]"
-        />
+        <TextScale propertyPath="data.scales[1]" />
+        <DownloadButtons propertyPath="refs[1]" />
         <div
           className={`p-4 relative // flex flex-col items-center justify-center  // border-1 // template ${
             state.templateScale ? `template-scale m-auto` : `relative`
@@ -86,16 +72,8 @@ export default ({ state, setState }) => {
         </div>
       </div>
       <div className="col-span-1">
-        <TextScale
-          state={state}
-          setState={setState}
-          propertyPath="data.scales[2]"
-        />
-        <DownloadButtons
-          state={state}
-          setState={setState}
-          propertyPath="refs[2]"
-        />
+        <TextScale propertyPath="data.scales[2]" />
+        <DownloadButtons propertyPath="refs[2]" />
         <div
           className={`p-4 relative // flex flex-col items-center justify-center // border-1 // template ${
             state.templateScale ? `template-scale` : `relative`
@@ -120,11 +98,7 @@ export default ({ state, setState }) => {
         </div>
       </div>
       <div className="col-span-1">
-        <DownloadButtons
-          state={state}
-          setState={setState}
-          propertyPath="refs[3]"
-        />
+        <DownloadButtons propertyPath="refs[3]" />
         <div
           className={`p-4 relative // flex flex-col items-center justify-center  // border-1 // template ${
             state.templateScale ? `template-scale` : `relative`
@@ -140,3 +114,5 @@ export default ({ state, setState }) => {
     </div>
   );
 };
+
+export default Template;
