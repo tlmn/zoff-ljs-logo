@@ -4,8 +4,9 @@ import ControlsLeft from "../templates/logo/controlsLeft";
 import ControlsRight from "../templates/logo/controlsRight";
 import Template from "../templates/logo/template";
 import TemplateLayout from "../components/templateLayout";
+import { Provider as DataContextProvider } from "../lib/useDataContext";
 
-export default () => {
+const IndexPage = () => {
   const [state, setState] = useState({
     currentSlide: 0,
     data: {
@@ -23,16 +24,20 @@ export default () => {
   });
 
   return (
-    <TemplateLayout>
-      <div className="col-span-3">
-        <ControlsLeft state={state} setState={setState} />
-      </div>
-      <div className="col-span-6">
-        <Template state={state} setState={setState} />
-      </div>
-      <div className="col-span-3">
-        <ControlsRight state={state} setState={setState} />
-      </div>
-    </TemplateLayout>
+    <DataContextProvider value={{ state, setState }}>
+      <TemplateLayout>
+        <div className="col-span-3">
+          <ControlsLeft />
+        </div>
+        <div className="col-span-6">
+          <Template />
+        </div>
+        <div className="col-span-3">
+          <ControlsRight />
+        </div>
+      </TemplateLayout>
+    </DataContextProvider>
   );
 };
+
+export default IndexPage;
