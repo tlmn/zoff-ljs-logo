@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ height, fillColor = "#252525", ...props }) => (
+const Logo2 = ({ height, fillColor = "#252525", ...props }) => (
   <svg height={height} viewBox="0 0 652 502" {...props}>
     <path
       fill-rule="evenodd"
@@ -10,3 +10,5 @@ export default ({ height, fillColor = "#252525", ...props }) => (
     />
   </svg>
 );
+
+export default Logo2;

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ height, ...props }) => (
+const Download = ({ height, ...props }) => (
   <svg viewBox="0 0 512 512" height={height} width={height} {...props}>
     <path
       d="M382.56,233.376C379.968,227.648,374.272,224,368,224h-64V16c0-8.832-7.168-16-16-16h-64c-8.832,0-16,7.168-16,16v208h-64
@@ -10,3 +10,5 @@ export default ({ height, ...props }) => (
     <path d="M432,352v96H80v-96H16v128c0,17.696,14.336,32,32,32h416c17.696,0,32-14.304,32-32V352H432z" />
   </svg>
 );
+
+export default Download;
