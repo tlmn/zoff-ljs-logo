@@ -2,20 +2,20 @@ import LogoSelect from "../../components/inputs/logoSelect";
 import React from "react";
 import Textarea from "../../components/inputs/textarea";
 
-export default ({ state, setState }) => (
+const ControlsRight = () => (
   <>
     <div className="font-headline italic uppercase text-white">
       Logovariante
     </div>
 
-    <LogoSelect state={state} setState={setState} />
+    <LogoSelect />
 
     <Textarea
-      state={state}
-      setState={setState}
       label="Lokalgruppe (optional)"
       propertyPath="data.localBranch.content"
       rows={2}
     />
   </>
 );
+
+export default ControlsRight;
