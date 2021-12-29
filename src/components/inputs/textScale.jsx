@@ -13,11 +13,11 @@ const TextScale = ({ propertyPath, label = "Textgröße" }) => {
         id={propertyPath}
         name="bodyTextScale"
         className="w-3/4"
-        min={getProperty({ state, setState }, `${propertyPath}.range[0]`)}
-        max={getProperty({ state, setState }, `${propertyPath}.range[1]`)}
-        value={getProperty({ state, setState }, `${propertyPath}.value`)}
+        min={getProperty(state, `${propertyPath}.range[0]`)}
+        max={getProperty(state, `${propertyPath}.range[1]`)}
+        value={getProperty(state, `${propertyPath}.value`)}
         onChange={(e) =>
-          updateProperty({ setState }, `${propertyPath}.value`, e.target.value)
+          updateProperty(setState, `${propertyPath}.value`, e.target.value)
         }
       />
     </>
