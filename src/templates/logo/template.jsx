@@ -23,7 +23,7 @@ const Template = () => {
             state.templateScale ? `template-scale` : `relative`
           }`}
           style={{
-            backgroundColor: getColor(state, 1),
+            backgroundColor: "transparent",
           }}
           ref={state.refs[0]}
         >
@@ -49,7 +49,7 @@ const Template = () => {
             state.templateScale ? `template-scale m-auto` : `relative`
           }`}
           style={{
-            backgroundColor: getColor(state, 1),
+            backgroundColor: "transparent",
           }}
           ref={state.refs[1]}
         >
@@ -79,7 +79,7 @@ const Template = () => {
             state.templateScale ? `template-scale` : `relative`
           }`}
           style={{
-            backgroundColor: getColor(state, 1),
+            backgroundColor: "transparent",
           }}
           ref={state.refs[2]}
         >
@@ -104,7 +104,7 @@ const Template = () => {
             state.templateScale ? `template-scale` : `relative`
           }`}
           style={{
-            backgroundColor: getColor(state, 1),
+            backgroundColor: "transparent",
           }}
           ref={state.refs[3]}
         >
