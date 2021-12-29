@@ -8,25 +8,23 @@ const ColorSelect = () => {
     <>
       <label>Corporate Design</label>
       <div className="grid-cols-2 grid">
-        {primaryColors.map((primaryColor) => (
+        {primaryColors.map(({ name, label }) => (
           <div className="col-span-1">
             <input
               type="radio"
-              value={primaryColor.label}
+              value={label}
               name="primaryColor"
-              id={primaryColor.name}
-              onChange={(e) => {
-                let value = e.target.value;
+              id={name}
+              onChange={({ target: { value } }) => {
                 setState((prev) => ({ ...prev, primaryColor: value }));
               }}
             />
-            <label htmlFor={primaryColor.name} className="label__radio">
+            <label htmlFor={name} className="label__radio">
               <div className="px-2">
                 <img
-                  src={`/assets/images/colorThemes/${primaryColor.label}.png`}
+                  src={`/assets/images/colorThemes/${label}.png`}
                   className={`colorThumbnail ${
-                    state.primaryColor === primaryColor.label &&
-                    `border-lightGray`
+                    state.primaryColor === label && `border-lightGray`
                   }`}
                 />
               </div>

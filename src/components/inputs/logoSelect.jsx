@@ -15,8 +15,7 @@ const LogoSelect = () => {
             value={i}
             name="colorTheme"
             id={i}
-            onChange={(e) => {
-              let value = e.target.value;
+            onChange={({ target: { value } }) => {
               setState((prev) => ({
                 ...prev,
                 data: { ...prev.data, logoVariant: parseInt(value) },

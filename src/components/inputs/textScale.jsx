@@ -16,8 +16,8 @@ const TextScale = ({ propertyPath, label = "Textgröße" }) => {
         min={getProperty(state, `${propertyPath}.range[0]`)}
         max={getProperty(state, `${propertyPath}.range[1]`)}
         value={getProperty(state, `${propertyPath}.value`)}
-        onChange={(e) =>
-          updateProperty(setState, `${propertyPath}.value`, e.target.value)
+        onChange={({ target: { value } }) =>
+          updateProperty(setState, `${propertyPath}.value`, value)
         }
       />
     </>

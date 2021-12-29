@@ -9,32 +9,14 @@ const DownloadButtons = ({ propertyPath }) => {
     <div className="flex mb-2" style={{ gap: "10px" }}>
       <button
         className="btn btn-download flex justify-center"
-        onClick={() =>
-          html2image(
-            {
-              state,
-              setState,
-            },
-            propertyPath,
-            "svg"
-          )
-        }
+        onClick={() => html2image(state, setState, propertyPath, "svg")}
       >
         <IconDownload height={20} className="mr-1" /> SVG
       </button>
 
       <button
         className="btn btn-download flex justify-center"
-        onClick={() =>
-          html2image(
-            {
-              state,
-              setState,
-            },
-            propertyPath,
-            "png"
-          )
-        }
+        onClick={() => html2image(state, setState, propertyPath, "png")}
       >
         <IconDownload height={20} className="mr-1" /> PNG
       </button>

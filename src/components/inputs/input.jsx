@@ -11,7 +11,9 @@ const Input = ({ propertyPath, label, ...props }) => {
       <input
         type="text"
         value={getProperty(state, propertyPath)}
-        onChange={(e) => updateProperty(setState, propertyPath, e.target.value)}
+        onChange={({ target: { value } }) =>
+          updateProperty(setState, propertyPath, value)
+        }
         id={propertyPath}
         {...props}
       />

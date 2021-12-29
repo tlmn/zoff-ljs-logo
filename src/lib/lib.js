@@ -16,11 +16,7 @@ import emojiRegex from "emoji-regex";
 import { toPng, toSvg } from "html-to-image";
 import { saveAs } from "file-saver";
 
-export const html2image = async (
-  { state, setState, fileName = "none" },
-  propertyPath,
-  fileType
-) => {
+export const html2image = async (state, setState, propertyPath, fileType) => {
   if (fileType === "svg") {
     setState((prev) => ({ ...prev, templateScale: false }));
 
@@ -45,7 +41,7 @@ export const html2image = async (
         quality: 1,
         width: 1080,
         height: 1080,
-      }).then(function (blob) {
+      }).then((blob) => {
         saveAs(blob, `logo.png`);
       });
     }, 500);
@@ -69,13 +65,13 @@ export const getColor = (currentState, order) => {
     (color) =>
       color.name ===
       colorThemes.filter(
-        (colorTheme) => colorTheme.label === currentState.data.colorTheme
+        ({ label }) => label === currentState.data.colorTheme
       )[0].colors[order]
   )[0].value;
 };
 
 export const getPrimaryColor = (currentState) => {
-  return colors.filter((color) => color.name === currentState.primaryColor)[0]
+  return colors.filter(({ name }) => name === currentState.primaryColor)[0]
     .value;
 };
 

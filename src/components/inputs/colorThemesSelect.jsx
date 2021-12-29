@@ -20,16 +20,13 @@ const ColorThemesSelect = () => {
             <input
               type="radio"
               value={
-                colorThemes.filter((theme) => theme.label === colorTheme)[0]
-                  .label
+                colorThemes.filter(({ label }) => label === colorTheme)[0].label
               }
               name="colorTheme"
               id={
-                colorThemes.filter((theme) => theme.label === colorTheme)[0]
-                  .name
+                colorThemes.filter(({ label }) => label === colorTheme)[0].name
               }
-              onChange={(e) => {
-                let value = e.target.value;
+              onChange={({ target: { value } }) => {
                 setState((prev) => ({
                   ...prev,
                   data: { ...prev.data, colorTheme: value },
@@ -38,22 +35,20 @@ const ColorThemesSelect = () => {
             />
             <label
               htmlFor={
-                colorThemes.filter((theme) => theme.label === colorTheme)[0]
-                  .name
+                colorThemes.filter(({ label }) => label === colorTheme)[0].name
               }
               className="label__radio"
             >
               <div className="px-2">
                 <img
                   src={`/assets/images/colorThemes/${
-                    colorThemes.filter((theme) => theme.label === colorTheme)[0]
+                    colorThemes.filter(({ label }) => label === colorTheme)[0]
                       .label
                   }.png`}
                   className={`colorThumbnail ${
                     state.colorTheme ===
-                      colorThemes.filter(
-                        (theme) => theme.label === colorTheme
-                      )[0].label && `border-lightGray`
+                      colorThemes.filter(({ label }) => label === colorTheme)[0]
+                        .label && `border-lightGray`
                   }`}
                   alt="colorThumbnail"
                 />
@@ -71,16 +66,13 @@ const ColorThemesSelect = () => {
             <input
               type="radio"
               value={
-                colorThemes.filter((theme) => theme.label === colorTheme)[0]
-                  .label
+                colorThemes.filter(({ label }) => label === colorTheme)[0].label
               }
               name="colorTheme"
               id={
-                colorThemes.filter((theme) => theme.label === colorTheme)[0]
-                  .name
+                colorThemes.filter(({ label }) => label === colorTheme)[0].name
               }
-              onChange={(e) => {
-                let value = e.target.value;
+              onChange={({ target: { value } }) => {
                 setState((prev) => ({
                   ...prev,
                   data: { ...prev.data, colorTheme: value },
@@ -89,22 +81,20 @@ const ColorThemesSelect = () => {
             />
             <label
               htmlFor={
-                colorThemes.filter((theme) => theme.label === colorTheme)[0]
-                  .name
+                colorThemes.filter(({ label }) => label === colorTheme)[0].name
               }
               className="label__radio"
             >
               <div className="px-1">
                 <img
                   src={`/assets/images/colorThemes/${
-                    colorThemes.filter((theme) => theme.label === colorTheme)[0]
+                    colorThemes.filter(({ label }) => label === colorTheme)[0]
                       .label
                   }.png`}
                   className={`colorThumbnail ${
                     state.colorTheme ===
-                      colorThemes.filter(
-                        (theme) => theme.label === colorTheme
-                      )[0].label && `border-lightGray`
+                      colorThemes.filter(({ label }) => label === colorTheme)[0]
+                        .label && `border-lightGray`
                   }`}
                   alt="colorThumbnail"
                 />
