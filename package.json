@@ -2,6 +2,7 @@
   "name": "zoff-ljs-logo",
   "description": "Logo Generator for linksjugend ['solid]",
   "dependencies": {
+    "clsx": "^1.1.1",
     "emoji-regex": "^10.0.0",
     "file-saver": "^2.0.5",
     "gatsby": "^3.14.0",
