@@ -22,8 +22,8 @@ const Template = () => {
   return (
     <div className="col-span-6 relative grid-cols-2 grid gap-x-2">
       <div className="col-span-1" style={{ height: "360px" }}>
-        <TextScale propertyPath="data.scales[0]" />
         <DownloadButtons propertyPath="refs[0]" />
+        <TextScale propertyPath="data.scales[0]" />
         <div
           className={clsx(
             "p-4 relative // flex flex-col items-center justify-center  // border-1 // template",
@@ -49,8 +49,8 @@ const Template = () => {
         </div>
       </div>
       <div className="col-span-1" style={{ height: "360px" }}>
-        <TextScale propertyPath="data.scales[1]" />
         <DownloadButtons propertyPath="refs[1]" />
+        <TextScale propertyPath="data.scales[1]" />
         <div
           className={clsx(
             "p-4 relative // flex flex-col items-center justify-center  // border-1 // template",
@@ -76,8 +76,8 @@ const Template = () => {
         </div>
       </div>
       <div className="col-span-1">
-        <TextScale propertyPath="data.scales[2]" />
         <DownloadButtons propertyPath="refs[2]" />
+        <TextScale propertyPath="data.scales[2]" />
         <div
           className={clsx(
             "p-4 relative // flex flex-col items-center justify-center // border-1 // template",
