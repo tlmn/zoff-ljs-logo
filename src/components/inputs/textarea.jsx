@@ -9,12 +9,10 @@ const Textarea = ({ propertyPath, label, ...props }) => {
     <>
       <label htmlFor={propertyPath}>{label}</label>
       <textarea
-        onChange={(e) =>
-          updateProperty({ state, setState }, propertyPath, e.target.value)
-        }
+        onChange={(e) => updateProperty(setState, propertyPath, e.target.value)}
         id={propertyPath}
         {...props}
-        value={getProperty({ state }, propertyPath)}
+        value={getProperty(state, propertyPath)}
       />
     </>
   );

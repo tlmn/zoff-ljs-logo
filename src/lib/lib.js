@@ -25,7 +25,7 @@ export const html2image = async (
     setState((prev) => ({ ...prev, templateScale: false }));
 
     setTimeout(() => {
-      toSvg(getProperty({ state }, propertyPath).current, {
+      toSvg(getProperty(state, propertyPath).current, {
         quality: 1,
         width: 1080,
         height: 1080,
@@ -41,12 +41,12 @@ export const html2image = async (
     setState((prev) => ({ ...prev, templateScale: false }));
 
     setTimeout(() => {
-      toPng(getProperty({ state }, propertyPath).current, {
+      toPng(getProperty(state, propertyPath).current, {
         quality: 1,
         width: 1080,
         height: 1080,
       }).then(function (blob) {
-        saveAs(blob, `logo-.png`);
+        saveAs(blob, `logo.png`);
       });
     }, 500);
 
@@ -117,7 +117,7 @@ export const getTextStyles = (state, logoOrder = 0) => {
   return textStyles[state.data.logoVariant][logoOrder];
 };
 
-export const updateProperty = ({ setState }, path, newValue) => {
+export const updateProperty = (setState, path, newValue) => {
   setState((prev) => {
     let prevCloned = cloneDeepWith(prev);
     set(prevCloned, path, newValue);
@@ -125,6 +125,6 @@ export const updateProperty = ({ setState }, path, newValue) => {
   });
 };
 
-export const getProperty = ({ state }, path) => {
+export const getProperty = (state, path) => {
   return get(state, path);
 };
