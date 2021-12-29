@@ -1,9 +1,14 @@
+import clsx from "clsx";
 import React from "react";
 import { primaryColors } from "../../config/vars";
 import useDataContext from "../../lib/useDataContext";
 
 const ColorSelect = () => {
-  const { state, setState } = useDataContext();
+  const {
+    state: { primaryColor },
+    setState,
+  } = useDataContext();
+
   return (
     <>
       <label>Corporate Design</label>
@@ -23,9 +28,10 @@ const ColorSelect = () => {
               <div className="px-2">
                 <img
                   src={`/assets/images/colorThemes/${label}.png`}
-                  className={`colorThumbnail ${
-                    state.primaryColor === label && `border-lightGray`
-                  }`}
+                  className={clsx(
+                    "colorThumbnail",
+                    primaryColor === label && "border-lightGray"
+                  )}
                 />
               </div>
             </label>

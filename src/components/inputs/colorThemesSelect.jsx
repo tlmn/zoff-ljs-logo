@@ -8,7 +8,10 @@ import React from "react";
 import useDataContext from "../../lib/useDataContext";
 
 const ColorThemesSelect = () => {
-  const { state, setState } = useDataContext();
+  const {
+    state: { colorTheme: currentColorTheme },
+    setState,
+  } = useDataContext();
   return (
     <>
       <div className="font-headline text-white uppercase italic">
@@ -46,7 +49,7 @@ const ColorThemesSelect = () => {
                       .label
                   }.png`}
                   className={`colorThumbnail ${
-                    state.colorTheme ===
+                    currentColorTheme ===
                       colorThemes.filter(({ label }) => label === colorTheme)[0]
                         .label && `border-lightGray`
                   }`}
@@ -92,7 +95,7 @@ const ColorThemesSelect = () => {
                       .label
                   }.png`}
                   className={`colorThumbnail ${
-                    state.colorTheme ===
+                    currentColorTheme ===
                       colorThemes.filter(({ label }) => label === colorTheme)[0]
                         .label && `border-lightGray`
                   }`}

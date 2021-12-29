@@ -10,6 +10,7 @@ import LogoArrow from "../../assets/svg/logo-arrow";
 import React from "react";
 import TextScale from "../../components/inputs/textScale";
 import useDataContext from "../../lib/useDataContext";
+import clsx from "clsx";
 
 const Template = () => {
   const { state } = useDataContext();
@@ -24,13 +25,14 @@ const Template = () => {
         <TextScale propertyPath="data.scales[0]" />
         <DownloadButtons propertyPath="refs[0]" />
         <div
-          className={`p-4 relative // flex flex-col items-center justify-center  // border-1 // template ${
-            state.templateScale ? `template-scale` : `relative`
-          }`}
+          className={clsx(
+            "p-4 relative // flex flex-col items-center justify-center  // border-1 // template",
+            templateScale ? "template-scale" : "relative"
+          )}
           style={{
             backgroundColor: "transparent",
           }}
-          ref={state.refs[0]}
+          ref={refs[0]}
         >
           {renderLogoTextRight(logoVariant, 473, getColor(state, 0))}
           <span
@@ -50,9 +52,10 @@ const Template = () => {
         <TextScale propertyPath="data.scales[1]" />
         <DownloadButtons propertyPath="refs[1]" />
         <div
-          className={`p-4 relative // flex flex-col items-center justify-center  // border-1 // template ${
-            templateScale ? `template-scale m-auto` : `relative`
-          }`}
+          className={clsx(
+            "p-4 relative // flex flex-col items-center justify-center  // border-1 // template",
+            templateScale ? "template-scale m-auto" : "relative"
+          )}
           style={{
             backgroundColor: "transparent",
           }}
@@ -76,9 +79,10 @@ const Template = () => {
         <TextScale propertyPath="data.scales[2]" />
         <DownloadButtons propertyPath="refs[2]" />
         <div
-          className={`p-4 relative // flex flex-col items-center justify-center // border-1 // template ${
-            templateScale ? `template-scale` : `relative`
-          }`}
+          className={clsx(
+            "p-4 relative // flex flex-col items-center justify-center // border-1 // template",
+            templateScale ? "template-scale" : "relative"
+          )}
           style={{
             backgroundColor: "transparent",
           }}
@@ -101,13 +105,14 @@ const Template = () => {
       <div className="col-span-1">
         <DownloadButtons propertyPath="refs[3]" />
         <div
-          className={`p-4 relative // flex flex-col items-center justify-center  // border-1 // template ${
-            templateScale ? `template-scale` : `relative`
-          }`}
+          className={clsx(
+            "p-4 relative // flex flex-col items-center justify-center  // border-1 // template",
+            templateScale ? "template-scale" : "relative"
+          )}
           style={{
             backgroundColor: "transparent",
           }}
-          ref={state.refs[3]}
+          ref={refs[3]}
         >
           <LogoArrow fillColor={getColor(state, 0)} width={250} />
         </div>
